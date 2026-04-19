@@ -40,7 +40,7 @@ func (s *ExchangeService) GetRate(from, to string) (float64, error) {
 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
 		return 0, fmt.Errorf("decode error: %w", err)
 	}
-	fmt.Println(result) // Debug print from source code
+	fmt.Println(result)
 
 	if resp.StatusCode != http.StatusOK {
 		if result.ErrorMsg != "" {
